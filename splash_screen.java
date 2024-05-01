@@ -29,13 +29,12 @@ class screen extends JFrame implements Runnable
     {
 	super("Electricity billing System");
 	setLayout(new FlowLayout());
-    	ImageIcon c1=new ImageIcon(ClassLoader.getSystemResource("Electricity/icons/electricity 1.jpg"));
+    ImageIcon c1=new ImageIcon(("electricity 1.jpg"));
 	Image i1=c1.getImage().getScaledInstance(730,550,Image.SCALE_DEFAULT);
 	ImageIcon c2=new ImageIcon(i1);
 	JLabel l1=new JLabel(c2);
 	add(l1);
-	//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        t1=new Thread(this);
+	t1=new Thread(this);
 	t1.start();
     }
     public void run()

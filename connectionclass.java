@@ -22,5 +22,4 @@ public class connectionclass {
 	}
 }
 
-//Class.forName("com.mysql.cj.jdbc.Driver");
-//				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:330/billing","root","ankit@123");
+

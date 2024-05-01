@@ -92,7 +92,7 @@ public class generate_bill extends JFrame implements ActionListener
         {
             String meterno=c1.getSelectedItem();
             String month=c2.getSelectedItem();
-            t1.setText("\tReliance Power limited\nELRCTRICITY BILL FOR THE MONTH OF "+month+",2020\n\n");
+            t1.setText("\tHritik Power limited\nELECTRICITY BILL FOR THE MONTH OF "+month+",2020\n\n");
             try
             {
                 connectionclass con=new connectionclass();
@@ -106,33 +106,16 @@ public class generate_bill extends JFrame implements ActionListener
                     t1.append("\nstate : "+rset2.getString("state"));
                     t1.append("\ncity : "+rset2.getString("city"));
                     t1.append("\nemail : "+rset2.getString("email"));
-                    t1.append("\nphone : "+rset2.getString("phone"));
+                    t1.append("\nphone : "+rset2.getString("phone_no"));
                 }
                 t1.append("\n---------------------------------------");
-                String q2="select * from tax";
-                ResultSet rset3=con.stm.executeQuery(q2);
-                while(rset3.next())
-                {
-                    t1.append("\nmeter location : "+rset3.getString("meter_location"));
-                    t1.append("\nmeter type : "+rset3.getString("meter_type"));
-                    t1.append("\nphase code : "+rset3.getString("phase_code"));
-                    t1.append("\nbill type : "+rset3.getString("bill_type"));
-                    t1.append("\nday : "+rset3.getString("days"));
-
-                    t1.append("\n\n---------------------------------------");
-                    t1.append("\nmeter rent : "+rset3.getString("meter_rent"));
-                    t1.append("\nservice rent : "+rset3.getString("service_rent"));
-                    t1.append("\ngst : "+rset3.getString("gst"));
-                    t1.append("\nmcb rent : "+rset3.getString("mcb_rent"));
-                }
-                t1.append("\n");
-                String q="select * from bill where meter_number = '"+meterno+"' and month='"+month+"'";
+//
+                String q="select * from bill where meter_no = '"+meterno+"' and month='"+month+"'";
                 ResultSet rset4=con.stm.executeQuery(q);
                 while(rset4.next())
                 {
-                    t1.append("\nmeter no : "+rset4.getString("meter_number"));
                     t1.append("\nCurrent month : "+rset4.getString("month"));
-                    t1.append("\nunits consumed : "+rset4.getString("units"));
+                    t1.append("\nunits consumed : "+rset4.getString("units_consumed"));
                     t1.append("\nTotal charges : "+rset4.getString("amount"));
                     t1.append("\n\n---------------------------------------");
                     t1.append("\nTotal PAYBILL : "+rset4.getString("amount"));

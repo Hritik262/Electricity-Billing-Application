@@ -24,17 +24,17 @@ public class loginpage extends JFrame implements ActionListener{
 //		setIconImage(img1.getImage());
 		l1=new JLabel("username");
 		l2=new JLabel("password");
-		ImageIcon i1=new ImageIcon(ClassLoader.getSystemResource("Electricity/icons/login 1.png"));
+		ImageIcon i1=new ImageIcon(("login 1.png"));
 		Image img=i1.getImage().getScaledInstance(120,140,Image.SCALE_DEFAULT);
 		ImageIcon i2=new ImageIcon(img);
 		l3=new JLabel(i2);
 		t1=new JTextField(15);
 		t2=new JPasswordField(15);
-		ImageIcon i3=new ImageIcon(ClassLoader.getSystemResource("Electricity/icons/login 2.png"));
+		ImageIcon i3=new ImageIcon(("login 2.png"));
 		Image img2=i3.getImage().getScaledInstance(16,16,Image.SCALE_DEFAULT);
                 b1=new JButton("Login", new ImageIcon(img2));
 		
-                ImageIcon i4=new ImageIcon(ClassLoader.getSystemResource("Electricity/icons/cancle.png"));
+                ImageIcon i4=new ImageIcon(("cancle.png"));
 		Image img3=i4.getImage().getScaledInstance(16,16,Image.SCALE_DEFAULT);
 		b2=new JButton("Cancle", new ImageIcon(img3));
 		
@@ -69,7 +69,7 @@ public class loginpage extends JFrame implements ActionListener{
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:330/billing","root","ankit@123");
+			Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Electricity","root","Hritik@9580");
 			//FirstCon obj=new FirstCon();
 			if(ev.getSource()==b1)
 			{
@@ -91,7 +91,7 @@ public class loginpage extends JFrame implements ActionListener{
 			}
 			else
 			{
-				JOptionPane.showMessageDialog(null,"sorry you pressed cancle button.....!");
+				JOptionPane.showMessageDialog(null,"sorry you pressed cancel button.....!");
 				setVisible(false);
 			}
 		}
